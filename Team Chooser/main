@@ -1,0 +1,31 @@
+#!/bin/python3
+from random import choice
+from random import randint
+
+
+
+players = []
+file=open('Players.txt','r')
+players=file.read().splitlines()
+print("Here are your TEAMS:")
+
+teamA = []
+teamB = []
+
+while(len(players)>0):
+  z=randint(1,2)
+  if(z == 1):
+    playerA=choice(players)
+    teamA.append(playerA)
+    players.remove(playerA)
+  
+  if(players == []):
+    break
+  
+  elif(z == 2):
+    playerB=choice(players)
+    teamB.append(playerB)
+    players.remove(playerB)
+  
+print(teamA)
+print(teamB)
