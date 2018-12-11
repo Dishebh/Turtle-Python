@@ -1,0 +1,64 @@
+#!/bin/python3
+
+from turtle import *
+from random import *
+
+def randomColor():
+  red = randint(0,255)
+  green = randint(0,255)
+  blue = randint(0,255)
+  color(red,green,blue)
+  
+def randomPlace():
+  penup()
+  x = randint(-100,100)
+  y = randint(-100,100)
+  goto(x,y)
+  pendown()
+  
+def setHeading():
+  number = randint(1,360)
+  right(number)
+  
+def drawRectangle():
+  randomColor()
+  randomPlace()
+  hideturtle()
+  length = randint(10, 100)
+  height = randint(10, 100)
+  begin_fill()
+  forward(length)
+  right(90)
+  forward(height)
+  right(90)
+  forward(length)
+  right(90)
+  forward(height)
+  right(90)
+  end_fill()
+
+'''for i in range(0,30):
+  shape("turtle")
+  randomColor()
+  randomPlace()
+  setHeading()
+  stamp()
+  
+for i in range(0,20):
+  drawRectangle()
+  '''
+def drawStar():
+  randomColor()
+  randomPlace()
+  begin_fill()
+  for side in range(5):
+    left(144)
+    forward(50)
+  end_fill()
+  
+speed(0)
+for i in range(20):
+  setHeading()
+  drawStar()
+  
+drawStar()
